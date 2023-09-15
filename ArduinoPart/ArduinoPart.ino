@@ -12,11 +12,12 @@
   ⢸⣿⣿⣿⣿⠿⣿⣦⣀⢸⣿⣿⡇⣀⣴⣿⠿⣿⣿⣿⣿⡇
   ⠸⠿⠿⠟⠁⠀⠈⠙⠻⠿⠿⠿⠿⠟⠋⠁⠀⠈⠻⠿⠿⠇
  */
-
+//wheels:
 const int TopLeft = 8;
 const int TopRight = 9;
 const int BottomLeft = 10;
 const int BottomRight = 11;
+
 int incomingByte;
 
 void setup() {
@@ -37,9 +38,17 @@ void loop() {
     incomingByte = Serial.read();
     
     if (incomingByte == 'S') {
-      
+      Stop();
     }
-   
+    else if (incomingByte == 'F') {
+      Forward();
+    }
+    else if (incomingByte == 'L') {
+      Left();
+    }
+    else if (incomingByte == 'R') {
+      Right();
+    }
 }}
 
 void Forward(){
